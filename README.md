@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LegalMatrix
 
-## Getting Started
+LegalMatrix is a comprehensive compliance enforcement platform and citizen portal designed to enforce the Legal Metrology (Packaged Commodities) Rules. It streamlines inspections, tracks mandatory declarations, and monitors regulatory compliance for manufacturers, importers, and packers.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📂 Directory Structure
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The repository is structured as a multi-workspace project following strict architectural guidelines:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **[frontend/](file:///c:/Users/Pratham%20Arora/OneDrive/Desktop/SIH-26/frontend)**: Next.js frontend application containing dashboards, analytics, inspection workflows, and the citizen portal.
+* **[backend/](file:///c:/Users/Pratham%20Arora/OneDrive/Desktop/SIH-26/backend)**: Folder designated for future backend services and APIs.
+* **[docs/](file:///c:/Users/Pratham%20Arora/OneDrive/Desktop/SIH-26/docs)**: Documentation and system architectural diagrams.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## ✨ Key Features
 
-To learn more about Next.js, take a look at the following resources:
+### 📊 Regulatory Dashboard & Analytics
+* High-level statistical summaries (Compliance Rate, Active Entities, Pending Verifications, Notices Issued).
+* Interactive risk rating distributions and compliance score graphs.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔍 Packaged Commodity Verification
+* **Mandatory Declarations Checklist**: Rule-by-rule auditing for key declarations:
+  * **Rule 6(1)(a)**: Name & Address of Manufacturer / Packer / Importer.
+  * **Rule 6(1)(aa)**: Country of Origin.
+  * **Rule 6(1)(b)**: Common or Generic Name.
+  * **Rule 6(1)(c)**: Net Quantity & Mass Standard.
+  * **Rule 6(1)(d)**: Month & Year of Manufacture / Packing.
+  * **Rule 6(1)(e)**: Maximum Retail Price (MRP) inclusive of all taxes.
+  * **Rule 6(1)(g)**: Consumer Care Cell contact details.
+  * **Rule 6(11)**: Unit Sale Price (USP).
+* Compliance scoring based on verified declarations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### ⚖️ Enforcement & Notice Management
+* Issue, track, and manage official notices for non-compliant commodities.
+* Track status of notices (e.g., `PENDING_RESPONSE`, `EXPLANATION_RECEIVED`, `COMPOUNDED`, `ESCALATED_TO_COURT`, `CLOSED`).
+* Log specific sections violated (e.g., Section 18 / 36 of the Legal Metrology Act) and track assigned officers.
 
-## Deploy on Vercel
+### 🏢 Entity Registry
+* Detailed directory of Manufacturers, Packers, and Importers.
+* Compliance scoring, historical notices, and risk tier categorization (`LOW`, `MEDIUM`, `HIGH`).
+* Registration status tracker (`REGISTERED`, `LICENSE_EXPIRED`, `SUSPENDED`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Technology Stack (Frontend)
+
+* **Framework**: Next.js (using App Router)
+* **Libraries**: React 19, Motion (Framer Motion)
+* **Styling**: Tailwind CSS v4, Lucide React (Icons)
+* **Language**: TypeScript
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have Node.js (v18.x or later) and npm installed.
+
+### Setup and Development
+
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
