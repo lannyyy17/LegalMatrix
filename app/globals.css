@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   LegalMatrix design tokens.
+   Government portal register: muted matcha, high contrast, generous
+   type. Registered through Tailwind v4's @theme so every token is
+   available as a utility (bg-matcha, text-ink-2, border-line ...).
+   --------------------------------------------------------------- */
+@theme {
+  --color-ink: #14201a;
+  --color-ink-2: #3a4a41;
+  --color-ink-3: #65756c;
+
+  --color-deep: #1f3527;
+  --color-deep-2: #2c4733;
+  --color-matcha: #3d6b4a;
+  --color-matcha-hover: #325a3d;
+  --color-matcha-mid: #7fa07a;
+
+  --color-tint: #e9f0e4;
+  --color-tint-2: #f2f6ee;
+  --color-paper: #fafbf8;
+  --color-line: #d3dccd;
+  --color-line-strong: #b4c2ac;
+
+  --color-ok: #2e6b4f;
+  --color-ok-bg: #e4f0e8;
+  --color-warn: #8a5d0b;
+  --color-warn-bg: #fbf0da;
+  --color-bad: #993030;
+  --color-bad-bg: #f8e7e5;
+  --color-info: #31556b;
+  --color-info-bg: #e6eef3;
+
+  --color-saffron: #e07b25;
+  --color-india-green: #0f7b33;
+
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), Georgia, serif;
+  --font-mono: var(--font-noto-mono), ui-monospace, monospace;
+
+  --radius-gov: 4px;
+}
+
+/* Base size is deliberately larger than a consumer app default and is
+   scaled by the A- / A / A+ control in the masthead. */
+html {
+  font-size: 17px;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+  line-height: 1.3;
+  letter-spacing: -0.005em;
+}
+
+:focus-visible {
+  outline: 3px solid #b8860b;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}
