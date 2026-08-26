@@ -1,15 +1,15 @@
 import { PageHeader } from "@/components/layout/PageHeader";
-import { CitizenTabs } from "@/components/citizen/CitizenTabs";
+import { ConsumerMobileView } from "@/components/citizen/ConsumerMobileView";
 
 export default function CitizenPage() {
   return (
     <>
       <PageHeader
-        crumb="Citizen portal"
-        title="Check a packaged commodity"
-        intro="Anyone can check whether a pack carries the declarations the law requires, and report one that does not. No login is needed."
+        crumb="Consumer Portal"
+        title="Consumer Mobile Verification & Rule Scanner"
+        intro="Scan any packaged product or check whether a pack complies with mandatory declarations under the Legal Metrology Rules, 2011. Direct connection to National Consumer Helpline 1915."
       />
-      <CitizenTabs />
+      <ConsumerMobileView />
     </>
   );
 }

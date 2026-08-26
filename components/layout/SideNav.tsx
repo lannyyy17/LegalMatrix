@@ -11,6 +11,7 @@ import {
   Layers,
   ScanLine,
   ScrollText,
+  Smartphone,
   Store,
   Users,
 } from "lucide-react";
@@ -43,6 +44,12 @@ const GROUPS: { group: string; items: NavItem[] }[] = [
     ],
   },
   {
+    group: "Consumer",
+    items: [
+      { href: "/citizen", label: "Consumer Mobile View", icon: Smartphone, badge: "NEW" },
+    ],
+  },
+  {
     group: "System",
     items: [
       { href: "/rules", label: "Rule engine", icon: ScrollText },
@@ -53,13 +60,32 @@ const GROUPS: { group: string; items: NavItem[] }[] = [
 
 export function SideNav() {
   const pathname = usePathname();
+  const isConsumerRoute = pathname === "/citizen";
+
+  const displayGroups = isConsumerRoute
+    ? [
+        {
+          group: "Consumer Mobile App",
+          items: [
+            { href: "/citizen", label: "Mobile App Home", icon: Smartphone, badge: "ACTIVE" },
+          ],
+        },
+        {
+          group: "Return to Officer View",
+          items: [
+            { href: "/", label: "Enforcement Dashboard", icon: Gauge },
+            { href: "/scan", label: "Officer Scan & Audit", icon: ScanLine },
+          ],
+        },
+      ]
+    : GROUPS;
 
   return (
     <nav
       aria-label="Main"
       className="no-print hidden w-[238px] shrink-0 bg-deep pb-8 pt-2 md:block"
     >
-      {GROUPS.map(({ group, items }) => (
+      {displayGroups.map(({ group, items }) => (
         <div key={group}>
           <p className="px-[1.15rem] pb-1 pt-3.5 text-[0.68rem] font-semibold uppercase tracking-[0.09em] text-matcha-mid">
             {group}
@@ -68,7 +94,7 @@ export function SideNav() {
             const active = pathname === href;
             return (
               <Link
-                key={href}
+                key={href + label}
                 href={href}
                 aria-current={active ? "page" : undefined}
                 className={`flex w-full items-center gap-2.5 border-l-[3px] px-[1.15rem] py-2 text-[0.92rem] ${
